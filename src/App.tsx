@@ -7,9 +7,12 @@ function App() {
   const products = [
     {
       images: [
-        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc",
-        "https://images.unsplash.com/photo-1550226891-ef816aed4a98",
-        "https://images.unsplash.com/photo-1540574163026-643ea20ade25"
+        "./src/assets/modern1.jpg",
+        "./src/assets/modern2.jpg",
+        "./src/assets/modern3.jpg",
+        "./src/assets/modern1.jpg",
+        "./src/assets/modern2.jpg",
+        "./src/assets/modern3.jpg",
       ],
       title: "Modern Majlis Set",
       description: "Luxurious and comfortable majlis set perfect for modern homes",
@@ -25,9 +28,13 @@ function App() {
     },
     {
       images: [
-        "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e",
-        "https://images.unsplash.com/photo-1538688525198-9b88f6f53126",
-        "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea"
+        "./src/assets/mejlis1.jpg",
+        "./src/assets/mejlis2.jpg",
+        "./src/assets/mejlis3.jpg",
+        "./src/assets/mejlis4.jpg",
+        "./src/assets/mejlis5.jpg",
+        "./src/assets/mejlis6.jpg"
+
       ],
       title: "Traditional Cushion Collection",
       description: "Handcrafted cushions with authentic traditional patterns",
@@ -43,9 +50,12 @@ function App() {
     },
     {
       images: [
-        "https://images.unsplash.com/photo-1524758631624-e2822e304c36",
-        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
-        "https://images.unsplash.com/photo-1519961655809-34fa156820ff"
+        "./src/assets/dining1.jpg",
+        "./src/assets/dining2.jpg",
+        "./src/assets/dining3.jpg",
+        "./src/assets/dining4.jpg",
+        "./src/assets/dining5.jpg",
+        "./src/assets/dining6.jpg"
       ],
       title: "Contemporary Dining Set",
       description: "Modern dining set that combines style with functionality",
@@ -95,7 +105,7 @@ function App() {
               className="float-animation"
             >
               <img
-                src="https://images.unsplash.com/photo-1618220179428-22790b461013"
+                src="./src/assets/hero.jpg"
                 alt="Luxury Furniture"
                 className="rounded-lg shadow-xl"
               />
@@ -282,7 +292,7 @@ function App() {
       <footer className="bg-primary text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <img src="/logo.png" alt="Zemzem Logo" className="h-12 mx-auto mb-4" />
+            <img src="./src/assets/logo.png" alt="Zemzem Logo" className="h-12 mx-auto mb-4" />
             <p className="text-sm">
               © {new Date().getFullYear()} Zemzem Mejlis and Furniture. All rights reserved.
             </p>
