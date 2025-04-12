@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,8 +11,16 @@
     --accent: #34818f;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-gray-50;
+    @apply bg-gray-50 font-sans text-gray-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
   }
 }
 
@@ -37,4 +47,23 @@
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+}
+
+.bg-mesh {
+  background-color: #ffffff;
+  background-image: radial-gradient(at 40% 20%, rgba(52, 129, 143, 0.1) 0px, transparent 50%),
+                    radial-gradient(at 80% 0%, rgba(30, 77, 92, 0.1) 0px, transparent 50%),
+                    radial-gradient(at 0% 50%, rgba(42, 100, 119, 0.1) 0px, transparent 50%);
+}
+
+.image-fade {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }

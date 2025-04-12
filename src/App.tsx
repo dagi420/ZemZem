@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, ArrowRight, Star, Shield, Truck } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight, Star, Shield, Truck, ChevronDown, ArrowUpRight } from 'lucide-react';
 import Navbar from './components/Navbar';
 import ProductCard from './components/ProductCard';
+import Map from './components/Map';
+import { cn } from './utils/cn';
 
 function App() {
   const products = [
@@ -10,10 +12,16 @@ function App() {
         "./src/assets/modern1.jpg",
         "./src/assets/modern2.jpg",
         "./src/assets/modern3.jpg",
-        "./src/assets/modern1.jpg",
-        "./src/assets/modern2.jpg",
-        "./src/assets/modern3.jpg",
+        "./src/assets/modern4.jpg",
+        "./src/assets/modern5.jpg",
+        "./src/assets/modern6.jpg"
       ],
+      // TODO: Replace with local paths:
+      // images: [
+      //   "/assets/products/majlis-set/main.jpg",
+      //   "/assets/products/majlis-set/detail-1.jpg",
+      //   "/assets/products/majlis-set/detail-2.jpg"
+      // ],
       title: "Modern Majlis Set",
       description: "Luxurious and comfortable majlis set perfect for modern homes",
       price: "Contact for Price",
@@ -34,8 +42,13 @@ function App() {
         "./src/assets/mejlis4.jpg",
         "./src/assets/mejlis5.jpg",
         "./src/assets/mejlis6.jpg"
-
       ],
+      // TODO: Replace with local paths:
+      // images: [
+      //   "/assets/products/cushions/main.jpg",
+      //   "/assets/products/cushions/detail-1.jpg",
+      //   "/assets/products/cushions/detail-2.jpg"
+      // ],
       title: "Traditional Cushion Collection",
       description: "Handcrafted cushions with authentic traditional patterns",
       price: "Contact for Price",
@@ -57,6 +70,12 @@ function App() {
         "./src/assets/dining5.jpg",
         "./src/assets/dining6.jpg"
       ],
+      // TODO: Replace with local paths:
+      // images: [
+      //   "/assets/products/dining-set/main.jpg",
+      //   "/assets/products/dining-set/detail-1.jpg",
+      //   "/assets/products/dining-set/detail-2.jpg"
+      // ],
       title: "Contemporary Dining Set",
       description: "Modern dining set that combines style with functionality",
       price: "Contact for Price",
@@ -72,60 +91,152 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-sans">
       <Navbar />
       
       {/* Hero Section */}
-      <section id="home" className="pt-16 hero-pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-mesh">
+        <div className="absolute inset-0 hero-pattern opacity-5"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-center lg:text-left space-y-8"
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
-                Transform Your Space with Elegant Furniture
-              </h1>
-              <p className="text-lg text-gray-600 mb-8">
-                Discover our exclusive collection of premium mejlis furniture and modern home décor
-              </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-md hover:bg-accent transition-colors"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="inline-block"
               >
-                Get in Touch
-                <ArrowRight className="ml-2" />
-              </a>
+                <span className="bg-primary/5 text-primary px-6 py-2 rounded-full text-sm font-medium border border-primary/10">
+                  Redefining Luxury Living
+                </span>
+              </motion.div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                className="font-serif text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] tracking-tight"
+              >
+                <span className="text-gradient">Timeless</span> <br />
+                Elegance for <br />
+                Your Space
+              </motion.h1>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0 text-balance"
+              >
+                Experience the perfect blend of traditional craftsmanship and contemporary design with our exclusive collection of premium mejlis furniture.
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <a
+                  href="#products"
+                  className={cn(
+                    "group relative px-8 py-4 rounded-full overflow-hidden bg-primary text-white",
+                    "transition-all duration-300",
+                    "hover:shadow-lg hover:shadow-primary/20",
+                    "active:scale-95"
+                  )}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative flex items-center justify-center gap-2">
+                    Explore Collection
+                    <ArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </span>
+                </a>
+                <a
+                  href="#contact"
+                  className={cn(
+                    "group px-8 py-4 rounded-full",
+                    "border-2 border-primary text-primary",
+                    "transition-all duration-300",
+                    "hover:bg-primary hover:text-white",
+                    "active:scale-95"
+                  )}
+                >
+                  Contact Us
+                </a>
+              </motion.div>
             </motion.div>
+            
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="float-animation"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
+              className="relative aspect-[4/3] w-full max-w-2xl mx-auto"
             >
-              <img
-                src="./src/assets/hero.jpg"
-                alt="Luxury Furniture"
-                className="rounded-lg shadow-xl"
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 rounded-2xl -rotate-2"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-accent/20 rounded-2xl rotate-2"></div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                <motion.img
+                  src="./src/assets/hero.jpg"
+                  // TODO: Replace with local path:
+                  // src="/assets/hero/hero-image.jpg"
+                  alt="Luxury Furniture"
+                  className="w-full h-full object-cover image-fade"
+                  initial={{ scale: 1.2 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1.5 }}
+                />
+              </div>
+              
+             
+              
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1, duration: 0.8 }}
+                className="absolute -right-8 top-8 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-white/20"
+              >
+                <p className="text-primary font-medium">Premium Quality</p>
+                <p className="text-2xl font-bold text-gradient">Guaranteed</p>
+              </motion.div>
             </motion.div>
           </div>
         </div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <a
+            href="#products"
+            className="flex flex-col items-center text-primary hover:text-accent transition-colors"
+          >
+            <span className="text-sm font-medium mb-2">Discover More</span>
+            <ChevronDown className="animate-bounce" />
+          </a>
+        </motion.div>
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center p-6"
+              className="text-center p-8 rounded-2xl bg-gray-50"
             >
-              <Star className="mx-auto text-primary mb-4" size={40} />
-              <h3 className="text-xl font-semibold text-primary mb-2">Premium Quality</h3>
+              <Star className="mx-auto text-primary mb-6" size={40} />
+              <h3 className="text-xl font-serif font-semibold text-primary mb-3">Premium Quality</h3>
               <p className="text-gray-600">Crafted with the finest materials and attention to detail</p>
             </motion.div>
             <motion.div
@@ -133,10 +244,10 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-center p-6"
+              className="text-center p-8 rounded-2xl bg-gray-50"
             >
-              <Shield className="mx-auto text-primary mb-4" size={40} />
-              <h3 className="text-xl font-semibold text-primary mb-2">Warranty Protected</h3>
+              <Shield className="mx-auto text-primary mb-6" size={40} />
+              <h3 className="text-xl font-serif font-semibold text-primary mb-3">Warranty Protected</h3>
               <p className="text-gray-600">All our products come with extended warranty coverage</p>
             </motion.div>
             <motion.div
@@ -144,10 +255,10 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-center p-6"
+              className="text-center p-8 rounded-2xl bg-gray-50"
             >
-              <Truck className="mx-auto text-primary mb-4" size={40} />
-              <h3 className="text-xl font-semibold text-primary mb-2">Free Delivery</h3>
+              <Truck className="mx-auto text-primary mb-6" size={40} />
+              <h3 className="text-xl font-serif font-semibold text-primary mb-3">Free Delivery</h3>
               <p className="text-gray-600">Complimentary delivery and installation service</p>
             </motion.div>
           </div>
@@ -155,22 +266,22 @@ function App() {
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-20 bg-white">
+      <section id="products" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-gradient mb-6">
               Our Featured Collections
             </h2>
-            <p className="text-gray-600">
-              Explore our handpicked selection of premium furniture pieces
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto text-balance">
+              Discover our handpicked selection of premium furniture pieces, each crafted to perfection
             </p>
           </motion.div>
-          <div className="space-y-16">
+          <div className="space-y-24">
             {products.map((product, index) => (
               <ProductCard key={index} {...product} />
             ))}
@@ -179,19 +290,19 @@ function App() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-gradient mb-6">
               Why Choose Zemzem
             </h2>
-            <p className="text-gray-600">
-              Experience the difference of working with furniture experts
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto text-balance">
+              Experience the difference of working with furniture experts who understand your vision
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -199,9 +310,9 @@ function App() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-lg"
+              className="bg-gray-50 p-8 rounded-2xl"
             >
-              <h3 className="text-xl font-semibold text-primary mb-4">Custom Design Service</h3>
+              <h3 className="text-2xl font-serif font-semibold text-primary mb-4">Custom Design Service</h3>
               <p className="text-gray-600">
                 Our expert designers work with you to create the perfect furniture pieces that match your style and space requirements.
               </p>
@@ -210,9 +321,9 @@ function App() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-lg"
+              className="bg-gray-50 p-8 rounded-2xl"
             >
-              <h3 className="text-xl font-semibold text-primary mb-4">Professional Installation</h3>
+              <h3 className="text-2xl font-serif font-semibold text-primary mb-4">Professional Installation</h3>
               <p className="text-gray-600">
                 Our trained team ensures proper installation and setup of your furniture, guaranteeing perfect placement and assembly.
               </p>
@@ -221,9 +332,9 @@ function App() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-lg"
+              className="bg-gray-50 p-8 rounded-2xl"
             >
-              <h3 className="text-xl font-semibold text-primary mb-4">Quality Materials</h3>
+              <h3 className="text-2xl font-serif font-semibold text-primary mb-4">Quality Materials</h3>
               <p className="text-gray-600">
                 We use only the highest quality materials, ensuring durability and longevity of every piece we create.
               </p>
@@ -232,9 +343,9 @@ function App() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-lg"
+              className="bg-gray-50 p-8 rounded-2xl"
             >
-              <h3 className="text-xl font-semibold text-primary mb-4">After-Sales Support</h3>
+              <h3 className="text-2xl font-serif font-semibold text-primary mb-4">After-Sales Support</h3>
               <p className="text-gray-600">
                 Our commitment doesn't end with delivery. We provide comprehensive after-sales support and maintenance services.
               </p>
@@ -243,57 +354,107 @@ function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      {/* Location Section */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-gradient mb-6">
+              Visit Our Showroom
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto text-balance">
+              Experience our collection in person at our elegant showroom
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-2xl overflow-hidden shadow-lg"
+          >
+            <Map />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-gradient mb-6">
               Get in Touch
             </h2>
-            <p className="text-gray-600">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto text-balance">
               We'd love to hear from you. Contact us for inquiries and quotes.
             </p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="p-6 bg-gray-50 rounded-lg text-center"
+              whileHover={{ scale: 1.02 }}
+              className="p-8 bg-gray-50 rounded-2xl text-center"
             >
-              <Phone className="mx-auto text-primary mb-4" size={32} />
-              <h3 className="text-xl font-semibold text-primary mb-2">Call Us</h3>
-              <p className="text-gray-600">+1234567890</p>
+              <Phone className="mx-auto text-primary mb-6" size={32} />
+              <h3 className="text-xl font-serif font-semibold text-primary mb-3">Call Us</h3>
+              <p className="text-gray-600">+25196933032</p>
             </motion.div>
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="p-6 bg-gray-50 rounded-lg text-center"
+              whileHover={{ scale: 1.02 }}
+              className="p-8 bg-gray-50 rounded-2xl text-center"
             >
-              <Mail className="mx-auto text-primary mb-4" size={32} />
-              <h3 className="text-xl font-semibold text-primary mb-2">Email Us</h3>
-              <p className="text-gray-600">info@zemzem.com</p>
+              <Mail className="mx-auto text-primary mb-6" size={32} />
+              <h3 className="text-xl font-serif font-semibold text-primary mb-3">Email Us</h3>
+              <p className="text-gray-600">zemzemmejilis@gmail.com</p>
             </motion.div>
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="p-6 bg-gray-50 rounded-lg text-center"
+              whileHover={{ scale: 1.02 }}
+              className="p-8 bg-gray-50 rounded-2xl text-center"
             >
-              <MapPin className="mx-auto text-primary mb-4" size={32} />
-              <h3 className="text-xl font-semibold text-primary mb-2">Visit Us</h3>
-              <p className="text-gray-600">123 Furniture Street, City</p>
+              <MapPin className="mx-auto text-primary mb-6" size={32} />
+              <h3 className="text-xl font-serif font-semibold text-primary mb-3">Visit Us</h3>
+              <p className="text-gray-600">Bethel Square, Addis Ababa</p>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <img src="./src/assets/logo.png" alt="Zemzem Logo" className="h-12 mx-auto mb-4" />
-            <p className="text-sm">
+      <footer className="bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="text-white space-y-6">
+              <img src="./src/assets/logo.png" alt="Zemzem Logo" className="h-28 w-auto" />
+              <p className="text-white/80">
+                Crafting timeless elegance for your living spaces since 2020.
+              </p>
+            </div>
+            <div className="text-white">
+              <h4 className="font-serif text-lg font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                <li><a href="#home" className="text-white/80 hover:text-white transition-colors">Home</a></li>
+                <li><a href="#products" className="text-white/80 hover:text-white transition-colors">Products</a></li>
+                <li><a href="#contact" className="text-white/80 hover:text-white transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div className="text-white">
+              <h4 className="font-serif text-lg font-semibold mb-4">Contact Info</h4>
+              <ul className="space-y-2">
+                <li className="text-white/80">+25196933032</li>
+                <li className="text-white/80">zemzemmejilis@gmail.com</li>
+                <li className="text-white/80">Bethel Square, Addis Ababa</li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-12 pt-8 border-t border-white/10 text-center">
+            <p className="text-white/60">
               © {new Date().getFullYear()} Zemzem Mejlis and Furniture. All rights reserved.
             </p>
           </div>
