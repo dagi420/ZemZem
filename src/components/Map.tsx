@@ -4,7 +4,7 @@ export default function Map() {
   // Replace with your actual showroom coordinates
   const latitude = "9.003561775989475";
   const longitude = "38.69387206163938";
-  const zoom = 80; // Adjust zoom level as needed
+  const zoom = 400; // Adjusted zoom level for a closer view
 
   return (
     <motion.div

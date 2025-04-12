@@ -36,7 +36,7 @@ function App() {
     },
     {
       images: [
-        "./src/assets/mejlis1.jpg",
+        "/src/assets/mejlis1.jpg",
         "./src/assets/mejlis2.jpg",
         "./src/assets/mejlis3.jpg",
         "./src/assets/mejlis4.jpg",
