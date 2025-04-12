@@ -425,7 +425,7 @@ function App() {
             >
               <Phone className="mx-auto text-primary mb-6" size={32} />
               <h3 className="text-xl font-serif font-semibold text-primary mb-3">Call Us</h3>
-              <p className="text-gray-600">+25196933032</p>
+              <p className="text-gray-600">+251969332032</p>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.02 }}
@@ -468,7 +468,7 @@ function App() {
             <div className="text-white">
               <h4 className="font-serif text-lg font-semibold mb-4">Contact Info</h4>
               <ul className="space-y-2">
-                <li className="text-white/80">+25196933032</li>
+                <li className="text-white/80">+251969332032</li>
                 <li className="text-white/80">zemzemmejilis@gmail.com</li>
                 <li className="text-white/80">Bethel Square, Addis Ababa</li>
               </ul>

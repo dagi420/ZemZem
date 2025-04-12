@@ -69,7 +69,7 @@ export default function ProductCard({
         
         <div className="flex justify-between items-center mt-6">
           <span className="text-accent font-bold text-xl">{price}</span>
-          <a href="tel:+25196933032" className="bg-primary text-white px-6 py-3 rounded-md hover:bg-accent transition-colors">
+          <a href="tel:+251969332032" className="bg-primary text-white px-6 py-3 rounded-md hover:bg-accent transition-colors">
             Request Quote
           </a>
         </div>
