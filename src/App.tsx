@@ -23,6 +23,7 @@ import dining3 from './assets/dining3.jpg'
 import dining4 from './assets/dining4.jpg'
 import dining5 from './assets/dining5.jpg'
 import dining6 from './assets/dining6.jpg'
+import logo from './assets/logo.png';
 
 
 function App() {
@@ -451,7 +452,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid md:grid-cols-3 gap-12">
             <div className="text-white space-y-6">
-              <img src="./src/assets/logo.png" alt="Zemzem Logo" className="h-28 w-auto" />
+              <img src={logo} alt="Zemzem Logo" className="h-28 w-auto" />
               <p className="text-white/80">
                 Crafting timeless elegance for your living spaces since 2020.
               </p>
