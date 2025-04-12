@@ -5,17 +5,36 @@ import ProductCard from './components/ProductCard';
 import Map from './components/Map';
 import { cn } from './utils/cn';
 import hero from './assets/hero.jpg';
+import modern1 from './assets/modern1.jpg'
+import modern2 from './assets/modern2.jpg'
+import modern3 from './assets/modern3.jpg'
+import modern4 from './assets/modern4.jpg'
+import modern5 from './assets/modern5.jpg'
+import modern6 from './assets/modern6.jpg'
+import mejlis1 from './assets/mejlis1.jpg'
+import mejlis2 from './assets/mejlis2.jpg'
+import mejlis3 from './assets/mejlis3.jpg'
+import mejlis4 from './assets/mejlis4.jpg'
+import mejlis5 from './assets/mejlis5.jpg'
+import mejlis6 from './assets/mejlis6.jpg'
+import dining1 from './assets/dining1.jpg'
+import dining2 from './assets/dining2.jpg'
+import dining3 from './assets/dining3.jpg'
+import dining4 from './assets/dining4.jpg'
+import dining5 from './assets/dining5.jpg'
+import dining6 from './assets/dining6.jpg'
+
 
 function App() {
   const products = [
     {
       images: [
-        "./src/assets/modern1.jpg",
-        "./src/assets/modern2.jpg",
-        "./src/assets/modern3.jpg",
-        "./src/assets/modern4.jpg",
-        "./src/assets/modern5.jpg",
-        "./src/assets/modern6.jpg"
+        modern1,
+        modern2,
+        modern3,
+        modern4,
+        modern5,
+        modern6
       ],
       // TODO: Replace with local paths:
       // images: [
@@ -37,12 +56,12 @@ function App() {
     },
     {
       images: [
-        "/src/assets/mejlis1.jpg",
-        "./src/assets/mejlis2.jpg",
-        "./src/assets/mejlis3.jpg",
-        "./src/assets/mejlis4.jpg",
-        "./src/assets/mejlis5.jpg",
-        "./src/assets/mejlis6.jpg"
+        mejlis1,
+        mejlis2,
+        mejlis3,
+        mejlis4,
+        mejlis5,
+        mejlis6
       ],
       // TODO: Replace with local paths:
       // images: [
@@ -64,12 +83,12 @@ function App() {
     },
     {
       images: [
-        "./src/assets/dining1.jpg",
-        "./src/assets/dining2.jpg",
-        "./src/assets/dining3.jpg",
-        "./src/assets/dining4.jpg",
-        "./src/assets/dining5.jpg",
-        "./src/assets/dining6.jpg"
+        dining1,
+        dining2,
+        dining3,
+        dining4,
+        dining5,
+        dining6
       ],
       // TODO: Replace with local paths:
       // images: [
