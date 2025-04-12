@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import ProductCard from './components/ProductCard';
 import Map from './components/Map';
 import { cn } from './utils/cn';
+import hero from './assets/hero.jpg';
 
 function App() {
   const products = [
@@ -183,7 +184,7 @@ function App() {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-accent/20 rounded-2xl rotate-2"></div>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                 <motion.img
-                  src="./src/assets/hero.jpg"
+                  src={hero}
                   // TODO: Replace with local path:
                   // src="/assets/hero/hero-image.jpg"
                   alt="Luxury Furniture"
